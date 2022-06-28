@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { MyService } from './app.service';
 
 @Component({
   selector: 'test-root',
@@ -10,4 +11,6 @@ export class AppComponent {
   scroll() {
     console.log('scroll');
   }
+
+  constructor(private service: MyService) {}
 }
