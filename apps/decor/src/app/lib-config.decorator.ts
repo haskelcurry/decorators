@@ -8,15 +8,19 @@ export function LibConfig(config: LibConfigInterface) {
   console.log(`LibConfig evaluated`, config);
   
   return (Class: Type<any>) => {
+    //  TELL ABOUT THETA AND FEATURES
     const componentDef = Class[ɵNG_COMP_DEF];
 
     // If no providers specified, i.e. no providersFeature is present,
     // apply one manually.
     // More on feature:
     // https://github.com/angular/angular/blob/master/packages/core/src/render3/features/providers_feature.ts
+    //  LATER vvvvvvvvvvvvvvvv
     if (!componentDef.providersResolver) {
       providersFeature([])(componentDef);
     }
+    //  LATER ^^^^^^^^^^^^^^^^^
+
     // Take the original providers resolver
     const originalProvidersResolver = componentDef.providersResolver;
 

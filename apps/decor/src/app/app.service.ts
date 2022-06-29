@@ -39,7 +39,10 @@ export class MyService implements OnLangChange {
 
 
 
-/* 5 */
+/* 5 */ //  Now I want to inject certain service
+// (although it's a little bit against the idea)
+// (...still it makes sense)
+//
 // function Log(level: Level): MethodDecorator { 
 //   return function logging(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
 //     const originalMethod = descriptor.value;
@@ -54,10 +57,14 @@ export class MyService implements OnLangChange {
 //   }
 // }
 
+//  5.5 -- !!!! Add to app.component.ts l51
+//  It wouldn't work, because out of scope of injection
 
 
 /* 7 */
 /* 10 */
+/*      NOW  WITH  STATIC  INJECTOR  */
+//  EXTRACT TO OWN FILE
 export function Log(level: Level): MethodDecorator { 
   return function logging(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
     const originalMethod = descriptor.value;

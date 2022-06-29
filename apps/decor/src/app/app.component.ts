@@ -8,7 +8,7 @@ import { LibConfig } from './lib-config.decorator';
 import { Level } from './logger.service';
 import { OnLangChange, Translatable } from './translation';
 
-/* 3 */
+/* 2.5 */
 export function Debounce(milliseconds = 500): MethodDecorator {
   return function (
     target: any,
@@ -28,13 +28,12 @@ export const LIB_CONFIG = new InjectionToken<LibConfigInterface>('LIB_CONFIG');
 //   version: 2,
 //   theme: 'dark'
 // })
-/* 11 */
 @Translatable()
 @Component({
   selector: 'test-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  /* 17 */
+  /* 17   SHOW  ANGULAR  MATERIAL*/
   providers: [{
     provide: LIB_CONFIG,
     useValue: {
@@ -43,6 +42,7 @@ export const LIB_CONFIG = new InjectionToken<LibConfigInterface>('LIB_CONFIG');
     }
   }]
 })
+/* 11   --  OnLangChange +  Translatable */
 export class AppComponent implements OnLangChange {
   /* 2 */
   @HostListener('document:scroll')

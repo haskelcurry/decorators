@@ -29,6 +29,8 @@ export function Translatable() {
   return function translatable<T extends ConstructorFunction<OnLangChange>>(
     constructor: T
   ): any | void {
+    // SKIP TO 13!!!!!!!!!!
+    // TALK ABOUT THETA  (copy from opened tab)
     const injectable = constructor[NG_PROV_DEF];
 
     if (injectable) {
@@ -44,10 +46,11 @@ export function Translatable() {
           injected.ngOnLangChange(lang)
         );
 
-        return injected;
+        return injected;   // NOW WE GOT AN INSTANCE OF SERVICE, TOO
       };
     } else {
       /* 13 THIS FIRST */
+      // NOTE HOW WE OVERRIDE THE CONSTRUCTOR HERE, HOOKING INTO THE INSTANCE AND GETTING ACCESS TO "THIS"
       return class extends constructor {
         constructor(...args) {
           super(...args);
