@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { SomeComponent } from './some.component';
+import { SharedModule } from './shared.module';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
-  imports: [BrowserModule],
+  declarations: [AppComponent, SomeComponent],
+  /* 9 */
+  imports: [BrowserModule, SharedModule],
   providers: [],
   bootstrap: [AppComponent],
 })
