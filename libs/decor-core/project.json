@@ -1,0 +1,41 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/decor-core/src",
+  "prefix": "test",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/decor-core"],
+      "options": {
+        "project": "libs/decor-core/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/decor-core/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/decor-core/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/decor-core"],
+      "options": {
+        "jestConfig": "libs/decor-core/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/decor-core/**/*.ts",
+          "libs/decor-core/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

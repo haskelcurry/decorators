@@ -3,6 +3,11 @@
   "version": 2,
   "projects": {
     "decor": "apps/decor",
-    "decor-e2e": "apps/decor-e2e"
+    "decor-core": "libs/decor-core",
+    "decor-e2e": "apps/decor-e2e",
+    "plugin": "apps/plugin",
+    "plugin-e2e": "apps/plugin-e2e",
+    "shell": "apps/shell",
+    "shell-e2e": "apps/shell-e2e"
   }
 }
