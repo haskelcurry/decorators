@@ -20,6 +20,13 @@ export function Debounce(milliseconds = 500): MethodDecorator {
   };
 }
 
+/* 2.6 */
+/* HOW TO EXTEND DECORATORS - func. composition! */
+// export function BaseDecorator(metadata: ...) {}
+// export function LibraryDecorator(metadata: ...) {
+//   return (componentClass: Type<any>) => BaseDecorator(metadata)(componentClass);
+// }
+
 export type LibConfigInterface = any;
 export const LIB_CONFIG = new InjectionToken<LibConfigInterface>('LIB_CONFIG');
 
